@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// Register the user in the database...
 		require ('./mysqli_connect.php'); // Connect to the db.
 		// Make the query:
-		$q = "INSERT INTO users (user_id, fname, lname, email, psword, registration_date) VALUES (' ', '$fn', '$ln', '$e', SHA1('$p'), NOW() )";		
+		$q = "INSERT INTO users (fname, lname, email, psword, registration_date) VALUES ('$fn', '$ln', '$e', SHA1('$p'), NOW() )";		
 		$result = @mysqli_query ($dbcon, $q); // Run the query.
 		if ($result) { // If it ran OK.
 		header ("location: register-thanks.php"); 
